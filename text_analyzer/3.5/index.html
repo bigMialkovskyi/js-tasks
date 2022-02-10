@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>проверка_текста</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form>
+        <p><b class="first">Введите ваш текст:</b></p>
+        <p><textarea rows="10" cols="45" name="text" id="area" onmouseout="wordCount()"></textarea></p>
+        <!-- <p><input size="100" type="text" name="user" id="resultarea"></p>
+        <p><input type="button" name="user" onclick="charactersInString()"></p>
+        <p><textarea rows="10" cols="45" name="text" id="statisticsArea"></textarea></p> -->
+    </form>
+
+    <form>
+        <fieldset>
+        <legend>choose options</legend>
+          <div>
+            <input type="checkbox" id="words" name="interest" value="words">
+            <label for="words">number of words in the text</label>
+          </div>
+          <div>
+            <input type="checkbox" id="characters" name="interest" value="characters">
+            <label for="characters">number of characters in the text</label>
+          </div>
+          <div>
+            <input type="checkbox" id="charactersWihtoutSpaces" name="interest" value="charactersWihtoutSpaces">
+            <label for="charactersWihtoutSpaces">number of characters in text without spaces</label>
+          </div>
+          <div>
+            <input type="checkbox" id="percentage" name="interest" value="percentage">
+            <label for="percentage">percentage of each character in the text</label>
+          </div>
+          <div>
+            <p><input value="confirm" type="button" name="user" onclick="checkboxTreatment()"></p>
+          </div>
+          <div>
+            <p><textarea oninput="auto_grow(this)" rows="10" cols="45" name="text" id="statisticsArea"></textarea></p>
+          </div>
+        </fieldset>
+      </form>
+
+</body>
+
+</html>

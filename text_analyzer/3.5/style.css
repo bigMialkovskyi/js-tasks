@@ -1,0 +1,30 @@
+html {
+    font-family: sans-serif;
+  }
+  
+  form {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  fieldset {
+    /* background: cyan; */
+    border: 5px solid blue;
+  }
+  
+  legend {
+    padding: 10px;
+    background: blue;
+    color: cyan;
+  }
+  #statisticsArea  {
+    width: 600px;
+    height: 130px;
+    padding: 5px;
+    border: #2A9F00 solid 2px;
+    border-radius: 5px;
+  }
