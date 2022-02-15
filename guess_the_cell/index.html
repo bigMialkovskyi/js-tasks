@@ -2,142 +2,18 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>проверка_текста</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Угадай ячейку</title>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <div>
-    <p><input value="start the game" type="button" name="user" onclick="startGame()"></p>
+    <p><input value="start the game" type="button" name="user" onclick="addElement()"></p>
   </div>
-
-  <table border="3">
-    <tbody>
-      <tr>
-        <td id="1" onclick="checkResult(this)">1</td>
-        <td id="2" onclick="checkResult(this)">2</td>
-        <td id="3" onclick="checkResult(this)">3</td>
-        <td id="4" onclick="checkResult(this)">4</td>
-        <td id="5" onclick="checkResult(this)">5</td>
-        <td id="6" onclick="checkResult(this)">6</td>
-        <td id="7" onclick="checkResult(this)">7</td>
-        <td id="8" onclick="checkResult(this)">8</td>
-        <td id="9" onclick="checkResult(this)">9</td>
-        <td id="10" onclick="checkResult(this)">10</td>
-      </tr>
-      <!-- <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>                                                                                                                           
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr>
-      <tr>
-        <td>Ячейка 1</td>
-        <td>Ячейка 2</td>
-        <td>Ячейка 3</td>
-        <td>Ячейка 4</td>
-        <td>Ячейка 5</td>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
-        <td>Ячейка 8</td>
-        <td>Ячейка 9</td>
-        <td>Ячейка 10</td>
-      </tr> -->
-    </tbody>
-  </table>
+  <div id="divForContent"></div>
 
 </body>
 
