@@ -1,52 +1,19 @@
-// var container = {
-//   randNumber: ""
-// };
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
 
-// function getRandomIntInclusive(min, max) {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-// }
-
-// function checkResult(element) {
-
-//   if (element.id == container.randNumber) {
-//     alert("you win")
-//     container.randNumber = ""
-//   } else {
-//     console.log("you lose")
-//   }
-//   return element.id
-// }
-
-// function startGame() {
-//   container.randNumber = String(getRandomIntInclusive(1, 10))
-//   console.log(container.randNumber)
-// }
-
-// document.body.onload = addElement;
-// var my_div = newDiv = null;
-// function addElement() {
-
-//   // Создаём новый элемент div
-//   // и добавляем в него немного контента
-
-//   var newDiv = document.createElement("div");
-//   newDiv.innerHTML = "<h1>Привет!</h1>";
-
-//   // Добавляем только что созданный элемент в дерево DOM
-
-//   my_div = document.getElementById("org_div1");
-//   document.body.insertBefore(newDiv, my_div);
-// } 
-
-//  document.body.onload = addElement;
-let my_div = newDiv = null;
+let randomNumber = []
 
 function addElement() {
 
+  generateWinNumbers()
+  let startButton = document.getElementById("startButton")
+  startButton.style.visibility = "hidden"
+
   let newTable = document.createElement("table");
-  newTable.innerHTML = "<table border=" + 3 + "></table>";
+  newTable.innerHTML = "<table></table>";
   newTable.id = "tableId"
   newTable.border = "3"
   my_divForContent = document.getElementById("divForContent");
@@ -67,17 +34,58 @@ function addElement() {
     newTr.id = "trId" + i
     my_tbody = document.getElementById("tbpdyId");
     my_tbody.append(newTr);
-    
+
 
     for (let a = 1; a <= 10; a++) {
       let newTd = document.createElement("td");
       let tdIds = a + counter
-      newTd.innerHTML = "<td>" + tdIds + "</td>";
+      newTd.innerHTML = "<td>-?-</td>";
       newTd.id = tdIds
+      newTd.style.backgroundColor = "gray"
       my_Tr = document.getElementById("trId" + i);
       my_Tr.append(newTd);
-      
+
     }
     counter = i * 10
   }
+}
+
+const table = document.getElementById('divForContent')
+table.addEventListener('click', event => {
+  gameProcess(event.target.id)
+  // console.log(event.target.id)
+})
+
+function gameProcess(fieldId) {
+
+  let cell = document.getElementById(fieldId)
+
+
+  for (let i = 0; i <= randomNumber.length; i++) {
+    if (fieldId == randomNumber[i]) {
+      cell.style.backgroundColor = "green"
+      randomNumber.splice(i, 1)
+      if (randomNumber.length == 0) {
+        console.log("you win")
+      }
+      if (randomNumber.length !== 0) {
+        console.log("Good job, keep going.")
+      }
+      break
+    }
+    else if (fieldId !== randomNumber[i]) {
+      console.log("try  again")
+      cell.style.backgroundColor = "red"
+    }
+  }
+  console.log(randomNumber)
+  // console.log(randomNumber.length)
+}
+
+function generateWinNumbers() {
+
+  while (randomNumber.length < 10){
+    randomNumber.push(String(getRandomIntInclusive(1, 100)))
+  }
+
 }
