@@ -118,3 +118,4 @@ function checkReading () {
     oToBeRead.onscroll = checkReading;
     checkReading.call(oToBeRead);
   }
+  
