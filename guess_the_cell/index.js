@@ -1,7 +1,7 @@
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 let randomNumber = []
@@ -9,7 +9,7 @@ let randomNumber = []
 function addElement() {
 
   generateWinNumbers()
-  timer(90)
+  timer(9)
   let startButton = document.getElementById("startButton")
   startButton.style.visibility = "hidden"
 
@@ -54,7 +54,6 @@ function addElement() {
 const table = document.getElementById('divForContent')
 table.addEventListener('click', event => {
   gameProcess(event.target.id)
-  // console.log(event.target.id)
 })
 
 function gameProcess(fieldId) {
@@ -101,7 +100,7 @@ function timer(timeLeft) {
     document.getElementById("statisticsArea").value = "you have left:" + counter + " seconds"
     if (counter == 0 && randomNumber.length != 0) {
       document.getElementById("tableId").style.visibility = "hidden"
-      document.getElementById("statisticsArea").value = "you lose"
+      document.getElementById("statisticsArea").value = "you lose. time is up"
       clearInterval(idIntervals)
     }
     if (counter > 0 && randomNumber.length == 0) {
