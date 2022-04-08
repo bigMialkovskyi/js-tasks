@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    #info, #monthInfo {
+      float: left;
+        margin: 0 5px 5px 0;
+        width:  233px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #f9f9f9;
+      }
+    body {
+    text-align: center;
+    font: 71%/1.5 Verdana, Sans-Serif;
+    background: #eee;
+    }
+    #divForContent {
+    margin: 100px auto;
+    width: 336px;
+    }
+    #listId {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+    #listId li {
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #f9f9f9;
+      }
+      #currentDay li {
+      float: left;
+      margin: 0 5px 5px 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #E8D3D3;
+      border: 1px solid #f9f9f9;
+      }
+      #left-button, #yaer-left-button {
+        float: left;
+        margin: 0 5px 5px 0;
+        width: 40px;
+        height: 42px;
+        line-height: 40px;
+        text-align: center;
+        background-image: url("leftarrow.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid #f9f9f9;
+        }
+      #right-button, #year-right-button {
+          float: left;
+          margin: 0 5px 5px 0;
+          width: 40px;
+          height: 42px;
+          line-height: 40px;
+          text-align: center;
+          background-image: url("rightarrow.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          border: 1px solid #f9f9f9;
+          } 
