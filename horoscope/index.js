@@ -40,25 +40,15 @@ const $requester = {
 }
 
 async function main(sign, day) {
-  const data = null;
-
-  let userSign = sign
-  let userDay = day
-  let description = 'description'
-
-  const response = await $requester.post("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + userSign + "&day=" + userDay)
-  console.log(response[description])
-  console.log(response)
+  const response = await $requester.post("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=" + day)
+  document.getElementById('divForContent').innerHTML = response['description']
 }
 
 document.addEventListener('keyup', function (event) {
   if (event.keyCode == 13) { //13 = Enter
     let birdhDate = document.getElementById('date-of-birdh').value
-    console.log(birdhDate)
     let month = Number(birdhDate.substr(5, 2))
     let day = Number(birdhDate.substr(8, 2))
-    console.log('month: ' + month)
-    console.log('day: ' + day)
 
     main(determineSign(month, day), determineDay())
   }
