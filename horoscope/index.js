@@ -41,7 +41,9 @@ const $requester = {
 
 async function main(sign, day) {
   const response = await $requester.post("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=" + day)
-  document.getElementById('divForContent').innerHTML = response['description']
+  let result = sign
+  result = result + ':<br>' + response['description']
+  document.getElementById('divForContent').innerHTML = result
 }
 
 document.addEventListener('keyup', function (event) {
@@ -49,25 +51,63 @@ document.addEventListener('keyup', function (event) {
     let birdhDate = document.getElementById('date-of-birdh').value
     let month = Number(birdhDate.substr(5, 2))
     let day = Number(birdhDate.substr(8, 2))
-
     main(determineSign(month, day), determineDay())
   }
-});
+})
 
 function determineSign(month, day) {
-  if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) return "Aries"
-  if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) return "Taurus"
-  if ((month == 5 && day >= 21) || (month == 6 && day <= 21)) return "Gemini"
-  if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) return "Cancer"
-  if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) return "Leo"
-  if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) return "Virgo"
-  if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) return "Libra"
-  if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) return "Scorpio"
-  if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) return "Sagittarius"
-  if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) return "Capricorn"
-  if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) return "Aquarius"
-  if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) return "Pisces"
+  let icon = document.getElementById('pageIcon')
+
+  if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+    icon.href = "icons/aries.png"
+    return "Aries"
+  }
+  if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+    icon.href = "icons/taurus.png"
+    return "Taurus"
+  }
+  if ((month == 5 && day >= 21) || (month == 6 && day <= 21)) {
+    icon.href = "icons/gemini.png"
+    return "Gemini"
+  }
+  if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+    icon.href = "icons/cancer.png"
+    return "Cancer"
+  }
+  if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+    icon.href = "icons/leo.png"
+    return "Leo"
+  }
+  if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+    icon.href = "icons/virgo.png"
+    return "Virgo"
+  }
+  if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+    icon.href = "icons/libra.png"
+    return "Libra"
+  }
+  if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) {
+    icon.href = "icons/scorpio.png"
+    return "Scorpio"
+  }
+  if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+    icon.href = "icons/sagittarius.png"
+    return "Sagittarius"
+  }
+  if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+    icon.href = "icons/capricorn.png"
+    return "Capricorn"
+  }
+  if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+    icon.href = "icons/aquarius.png"
+    return "Aquarius"
+  }
+  if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+    icon.href = "icons/pisces.png"
+    return "Pisces"
+  }
 }
+
 function determineDay() {
   let radios = document.querySelectorAll('input[type="radio"]');
   for (let radio of radios) {
