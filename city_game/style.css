@@ -1,21 +1,26 @@
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
 * {
   margin: 0;
   padding: 0;
-  }
-  .navigation {
-    margin: 100px auto;
-    width: 336px;
-    background: #E8D3D3;
-    }
-  body {
-    text-align: center;
-    font: 71%/1.5 Sans-Serif;
-    background: #eee;
-    }
-  #divForContent {
-    text-align: justify;
-    margin: 100px auto;
-    width: 336px;
-    background: #E8D3D3;
-    }
+}
+
+*/ #listId {
+  list-style: none;
+}
+
+.navigation {
+  margin: 100px auto;
+  width: 336px;
+  background: #E8D3D3;
+}
+
+body {
+  text-align: center;
+  font: 71%/1.5 Sans-Serif;
+  background: #eee;
+}
