@@ -1,0 +1,1 @@
+This repository contains my JS projects. Here I practice my JavaScript skills. 
